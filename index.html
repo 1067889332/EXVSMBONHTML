@@ -1,0 +1,658 @@
+<html>
+<head>
+<title>我在测试</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.min.js" integrity="sha512-EKrFvch3qTzLFQgjbcjpsRmF8T3UCtc9ojtMAu6dvvP+bV8qYUDOaQ84nwYCkSLT7lbqGoya/Kf+8fyCBE0vRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/css/layui.min.css" integrity="sha512-iQBJbsNHXUcgEIgWThd2dr8tOdKPvICwqjPEZYY81z3eMya44A5MiAqfWSCh+Ee1YzNYkdrI982Qhwgr8LEYOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://g-rwee.ggame.jp/css/ms_stage.css"/>
+    <link rel="stylesheet" href="https://g-rwee.ggame.jp/css/layout.css"/>
+    <link rel="stylesheet" href="https://g-rwee.ggame.jp/css/hamburgers.min.css"/>
+    <link rel="stylesheet" href="js/jqueryHover/demo.css">
+  
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/jqueryHover/demo.js"></script>
+    <style>
+
+ /*
+@font-face {
+    font-family:"zpix";
+    src: url('Font/zpix.ttf') format('truetype');
+
+             };
+  
+ @font-face {    font-family: "经典行书简";    src: url('../../../font/经典行书简.eot') format('embedded-opentype'),    url('../../../font/经典行书简.woff2') format('woff2'),    url('../../../font/经典行书简.woff') format('woff'),    url('../../../font/经典行书简.ttf') format('truetype'),    url('../../../font/经典行书简.svg#fontawesomeregular') format('svg');    font-weight: normal;    font-style: normal;}.home-row1-title{    width: 631px;    height: 53px;    margin: 58px auto 47px auto;    display: flex;    align-items: center;    font-size: 51px;    font-family:"经典行书简";}
+      */ 
+
+
+      body{
+     /*background-image:url('IMG/bg_loading.jpg');*/
+
+     background: url('IMG/bg_loading.jpg') no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+            };
+
+
+
+            body,ul,h3{
+            /*清除默认格式中的margin 和 padding*/
+            margin:0;
+            padding:0;
+        }
+        ul{
+            /*清除ul默认格式中的.*/
+            list-style: none;
+        }
+        /*清除margin-top塌陷*/
+        .clearfix:before,.clearfix:after{
+            content:"";
+            display:table;
+        }
+        /*清除浮动*/
+        .clearfix:after{
+            clear:both;
+        }
+        /*兼容IE*/
+        .clearfix{
+            zoom:1;
+        }
+
+
+        .pic_list_con{
+           /* width:958px;*/
+            border:1px solid #ddd;
+            /*多出来的ul要剪掉*/
+            overflow:hidden;
+        }
+        .pic_list_con h3{
+          /*  width:918px;*/
+            height:45px;
+            border-bottom: 1px solid #ddd;
+            /*是h3居中，不是h3中的文字居中哦！*/
+            margin:0 auto;
+        }
+        .pic_list_con h3 span{
+            /*内联元素转为内联块元素，支持全部样式*/
+            display:inline-block;
+            height:45px;
+            border-bottom: 2px solid red;
+            font: 18px/50px 'Microsoft YaHei UI';
+            padding:0 15px;
+        }
+        .pic_list_con ul{
+          /*  width: 950px;*/
+            margin:20px 0 13px 20px;
+        }
+        .pic_list_con ul li{
+            width:204px;
+            height: 100px;
+            /*多个div在一个页面上，默认情况是：一行一个div，但是只要在div的css中使用
+            float：left，可以使一行有多个div，这样可以把网页划分成很多块，
+            但是使用该属性会影响后面的元素，所有如果后面的div不想再被影响，
+            可以使用clear:both；
+            可以理解为清除float:left和float:right的影响，返回到默认状态。*/
+            float:left;
+            margin:5px 5px;
+        
+        }
+
+            
+    </style>
+    <script src="https://g-rwee.ggame.jp/js/ms.js"></script>
+</head>
+<body style="line-height:normal">
+    <div class="layui-container">  
+        <h1 style="text-align:center; color: red; font-size: 32px;">MBON结界群第七届全明星杯擂台赛</h1>
+        <div class="layui-row">
+            
+         
+
+          <div class="layui-col-md12">
+
+
+         
+
+
+            <div class="layui-card" style="opacity: 0.8;">
+                <div class="layui-card-header"><h1 style="font-size: 24px;"><b>比赛规则</b></h1></div>
+                <div class="layui-card-body">
+                    <h3 style="font-size: 18px; color: turquoise;"><b>比赛前言:</b></h3>
+                    <p style="font-size:medium; color: #6cf;">本比赛以友谊第一，比赛第二的原则，大家玩的开心就好，出现辱骂队友，辱骂对手的行为，将进行处罚。</p>
+                    <h3 style="font-size: 18px; color: turquoise;"><b>比赛时间:</b></h3>
+                    <p style="font-size:medium;color: #6cf;">2021 年 8 月 7 日，晚上 9 点开始比赛，如果一夭比不完的话，适当加赛。</p>
+                    <h3 style="font-size: 18px; color: turquoise;"><b>比赛规则:</b></h3>
+                    <p style="font-size:medium;color: #6cf;">1.本次比赛与以住的比赛不同，本次为三个群均参加比赛（铜牌群、进阶群、银牌群）</p>
+                    <p style="font-size:medium;color: #6cf;">2.本次比赛报名分别在各自的群里报名，由群主抽签决定每个队伍的组成部分（视频直播）</p>
+                    <p style="font-size:medium;color: #6cf;">3.本次比赛为 6 人一队，分为前锋2人（铜牌群）、中坚2人（进阶群）、大将 2 人（银牌群）制度 </p>
+                    <p style="font-size:medium;color: #6cf;">4.比赛为，每队的前锋先打，然后由获胜的前锋 vs 败方中坚，然后依次类推，打到其中一方大将先输了比赛，那就算本队 6 人全部输掉比赛。(参考打擂台）</p>
+                    <p style="font-size:medium;color: #6cf;">5.本次比赛要求三个群报名的人数必须要一样，并且都是偶数，并且是 6 的倍数 (12 、 18 、 24 、 30 、 36 ) ，望大家积极报名。</p>
+                    <p style="font-size:medium;color: #6cf;">6.本次比赛采用 BO3 积分制，以获得的分数决胜负。 </p>
+                    <p style="font-size:medium;color: #6cf;">7.已经组成队伍后，由本队 6 人对自己的队伍进行命名（队名参考 GGGp ，建议每队 6 人建立个自己的小群商里对策）</p>
+                    <p style="font-size:medium;color: #6cf;">8.比赛正式开始前，每个群投票迭择想要 BAN 掉的机子，选每个群投票结果前两台机体（台计6台）为比赛全程禁止使用机体。（(8月5日晚统计投票结果）</p>
+                    <p style="font-size:medium;color: #6cf;">9.为保持策略性，大家不要透露自己使用的机体，在比赛中对局开始时，再上报使用的机体，并且上报后就不可改变使用的机体。</p>
+                    <p style="font-size:medium;color: #6cf;">10.比赛每个 6 人队伍的对决顺序依然按照抽签决定，在比赛前一天抽签定好（视频直播） </p>
+                    <p style="font-size:medium;color: #6cf;">11.比赛机体的迭择参照 GGGP 机体表，一队 6 人共用 3 。分的机体分数。 </p>
+                    <p style="font-size:medium;color: #6cf;">12.比赛中发现屠失，或者金牌水平骗奖品的，当场取消比赛成绩。</p>
+                    <h3 style="font-size: 18px; color: turquoise;"><b>比赛积分规则:</b></h3>
+
+                    <p style="font-size:medium; color: orange;">前锋 VS 前锋，胜利方，积分＋ 1</p>
+                    <p style="font-size:medium; color: orange;">前锋 VS 中坚，前锋胜利积分＋ 2&nbsp;&nbsp;中坚胜利积分＋ 1</p>
+                    <p style="font-size:medium; color: orange;">前锋 VS 大将，前锋胜利积分＋ 3&nbsp;&nbsp;大将胜利积分＋ 1</p>
+                    <p style="font-size:medium; color: orange;">中坚 VS 中坚，胜利方，积分＋ 1</p>
+                    <p style="font-size:medium; color: orange;">中坚 VS 大将，中坚胜利积分＋ 2&nbsp;&nbsp;大将胜利积分＋ 1</p>
+                    <p style="font-size:medium; color: orange;">大将 VS 大将，胜利方，积分＋ 1</p>
+                    <p style="font-size:medium; color: orange;">一穿三奖励积分＋ 1 </p>
+                    <h3 style="font-size: 18px; color: turquoise;"><b>比赛参赛人员要求:</b></h3>
+                    <p style="font-size:medium;color: #6cf;">1.仅限铜牌群、进阶群、银牌群的人员参赛（部分蓝牌群人员强烈要求参赛的，可以报名）</p>
+                    <p style="font-size:medium;color: #6cf;">2.三个群的管理人员均可报名参赛，或可作为某些选手迟到或隔了的时候的替补参赛</p>
+                    <p style="font-size:medium;color: #6cf;">3.参赛人员的大号排位军阶必须低于金牌</p>
+                    <p style="font-size:medium;color: #6cf;">4.比赛裁判为：萌新群总群所有人员，如发现屠失，或者水平过高的，超过 5 人提出此人有金牌水平的，即永久取消比赛资格</p>
+                    <p style="font-size:medium;color: #6cf;">5.本次比赛全程直播，比赛解说员还未定，想报名的此时可以报名了参赛方式</p>
+                    <h3 style="font-size: 18px; color: turquoise;"><b>参赛方式:</b></h3>
+                    <p style="font-size:medium;color: #6cf;">1.在各个群内接龙报名</p>
+                    <p style="font-size:medium;color: #6cf;">2.由群主抽签决定每局对决队伍</p>
+                    <p style="font-size:medium;color: #6cf;">3.本次报名截止至 8 月 1 日晚 12 点整</p>
+                    <p style="font-size:medium;color: #6cf;">5.本次比赛全程直播，比赛解说员还未定，想报名的此时可以报名了参赛方式</p>
+                    <h3 style="font-size: 18px; color: turquoise;"><b>备注:</b></h3>
+                    <p style="font-size:medium;color: red;">比赛直播房间号(哔哩哔哩):2271006</p>
+                    <p style="font-size:medium;color:red;">比赛选手交流YY 房间号:1507242778</p>
+                    <p style="font-size:medium;color:red;">比赛抽签直播房间号(哔哩哔哩):22707272</p>
+                </div>
+              </div>
+
+              <div class="layui-card" style="opacity: 0.8;">
+                <div class="layui-card-header"><h1 style="font-size: 24px;"><b>机体分数表</b></h1></div>
+                <div class="layui-card-body">
+
+                   
+                    <div class="contentBand">
+                        <nav id="ssNavi">
+                          <ul>
+                            <li class="btn">
+                              <a href="#">
+                                COST 1500
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+
+                      <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>7分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/1500/灵格斯.png" alt="灵格斯"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>6分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/1500/肯普法.png" alt="肯普法"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>5分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/1500/斗狼.png" alt="斗狼"></a></li>
+                            <li><a href=""><img src="IMG/1500/拉扣.png" alt="拉寇"></a></li>
+                            <li><a href=""><img src="IMG/1500/龟霸1500.png" alt="龟霸"></a></li>
+                            <li><a href=""><img src="IMG/1500/卡碧尼红.png" alt="卡碧尼Mk-II（普露兹）"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>4分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/1500/老虎特装型.png" alt="老虎特装型"></a></li>
+                            <li><a href=""><img src="IMG/1500/扎古2改.png" alt="扎古2改"></a></li>
+                            <li><a href=""><img src="IMG/1500/EZ8.png" alt="高达EZ8"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>3分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/1500/伊芙利特改.png" alt="伊芙利特改"></a></li>
+                            <li><a href=""><img src="IMG/1500/F911500.png" alt="贝尔加·基洛斯"></a></li>
+                            <li><a href=""><img src="IMG/1500/暴风高达.png" alt="暴风高达"></a></li>
+                            <li><a href=""><img src="IMG/1500/铁人桃子.png" alt="铁人桃子"></a></li>
+                            <li><a href=""><img src="IMG/1500/决斗高达强袭尸装.png" alt="决斗高达强袭尸装"></a></li>
+                            <li><a href=""><img src="IMG/1500/VG1500.png" alt="胜利高达HEXA"></a></li>
+                            <li><a href=""><img src="IMG/1500/兹达.png" alt="兹达"></a></li>
+                            <li><a href=""><img src="IMG/1500/V1500.png" alt="钢伊吉"></a></li>
+                            <li><a href=""><img src="IMG/1500/日升高达.png" alt="日升高达"></a></li>
+                            <li><a href=""><img src="IMG/1500/阿里克斯.png" alt="阿里克斯"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>2分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/1500/GN-X3.png" alt="GN-X3"></a></li>
+                            <li><a href=""><img src="IMG/1500/路高.png" alt="路高"></a></li>
+                            <li><a href=""><img src="IMG/1500/扎古2.png" alt="扎古2"></a></li>
+                            <li><a href=""><img src="IMG/1500/无限正义.png" alt="无限正义（拉克丝）"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="contentBand">
+                        <nav id="ssNavi">
+                          <ul>
+                            <li class="btn">
+                              <a href="#">
+                                COST 2000
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+
+
+
+
+
+                      <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>7分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/蒙特罗.png" alt="蒙特罗"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>6分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/能天使高达.png" alt="能天使高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/巴巴托斯.png" alt="巴巴托斯高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/蓝色命运1号机.png" alt="蓝色命运1号机"></a></li>
+                            <li><a href=""><img src="IMG/2000/力天使高达.png" alt="力天使高达"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>5分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/希洛克1.png" alt="梅萨拉"></a></li>
+                            <li><a href=""><img src="IMG/2000/哈曼龟霸.png" alt="龟霸(哈曼)"></a></li>
+                            <li><a href=""><img src="IMG/2000/禁断高达.png" alt="禁断高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/马拉赛.png" alt="马拉赛&加布斯雷"></a></li>
+                            <li><a href=""><img src="IMG/2000/大青椒.png" alt="刹帝利"></a></li>
+                            <li><a href=""><img src="IMG/2000/强人.png" alt="强人"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>4分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/诺贝尔高达.png" alt="诺贝尔高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/创制强袭.png" alt="创制强袭高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/德尔塔普拉斯.png" alt="德尔塔普拉斯"></a></li>
+                            <li><a href=""><img src="IMG/2000/盖亚高达.png" alt="马拉赛&盖亚高达"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/夏亚专用勇士.png" alt="夏亚专用勇士"></a></li>
+                            <li><a href=""><img src="IMG/2000/轮胎.png" alt="轮胎"></a></li>
+                            <li><a href=""><img src="IMG/2000/玫瑰祖鲁.png" alt="玫瑰祖鲁"></a></li>
+                            <li><a href=""><img src="IMG/2000/完美高达.png" alt="完美高达"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/G战机.png" alt="高达（G战机）"></a></li>
+                            <li><a href=""><img src="IMG/2000/观星者.png" alt="观星者高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/炮扎.png" alt="炮击型扎古勇士"></a></li>
+                            <li><a href=""><img src="IMG/2000/AGE1.png" alt="高达AGE-1"></a></li>
+                            <li><a href=""><img src="IMG/2000/海盗X2.png" alt="海盗高达X2"></a></li>
+                            <li><a href=""><img src="IMG/2000/教主老虎.png" alt="烈焰老虎"></a></li>
+                         
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>3分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/迅雷高达.png" alt="迅雷高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/沙漠高达改.png" alt="沙漠高达改"></a></li>
+                            <li><a href=""><img src="IMG/2000/胶扎.png" alt="惊异扎古"></a></li>
+                            <li><a href=""><img src="IMG/2000/强尼扎古.png" alt="扎古2（强尼莱丁专用机）"></a></li>
+                            <li><a href=""><img src="IMG/2000/汉穆拉比.png" alt="汉穆拉比"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/法尔西亚.png" alt="法尔西亚"></a></li>
+                            <li><a href=""><img src="IMG/2000/V高达.png" alt="胜利高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/G奥秘.png" alt="G奥秘"></a></li>
+                            <li><a href=""><img src="IMG/2000/GP01.png" alt="高达试做一号机"></a></li>
+                            <li><a href=""><img src="IMG/2000/重武装高达改.png" alt="重武装高达改"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/劫掠高达.png" alt="劫掠高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/高达MK2.png" alt="高达MK2"></a></li>
+                            <li><a href=""><img src="IMG/2000/X异端高达.png" alt="X异端高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/红异端.png" alt="异端高达红色机"></a></li>
+                            <li><a href=""><img src="IMG/2000/金异端天.png" alt="异端高达金色机天"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/F91.png" alt="高达F91"></a></li>
+                            <li><a href=""><img src="IMG/2000/高达.png" alt="高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/锡蒙利.png" alt="高达·锡蒙利骑兵"></a></li>
+                            <li><a href=""><img src="IMG/2000/夏亚专用扎古2.png" alt="夏亚专用扎古2"></a></li>
+                            <li><a href=""><img src="IMG/2000/飞龙高达.png" alt="飞龙高达"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/座天使三型.png" alt="座天使高达三型"></a></li>
+                            <li><a href=""><img src="IMG/2000/黄盖.png" alt="盖亚高达（巴尔特菲尔德）"></a></li>
+                            <li><a href=""><img src="IMG/2000/红色角马.png" alt="红色·角马"></a></li>
+                            <li><a href=""><img src="IMG/2000/蓝异端.png" alt="异端高达蓝色机"></a></li>
+                            <li><a href=""><img src="IMG/2000/强袭高达.png" alt="强袭高达"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/地狱死神高达.png" alt="地狱死神高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/CCA鹦鹉.png" alt="雅克·多加"></a></li>
+                            <li><a href=""><img src="IMG/2000/嫣红强袭.png" alt="嫣红强袭高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/卡多勇士.png" alt="勇士（阿纳贝尔·卡多）"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/银斯莫.png" alt="银斯莫"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/扎古3.png" alt="扎古3"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>2分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/Z2000.png" alt="Z高达（露搭乘）"></a></li>
+                            <li><a href=""><img src="IMG/2000/马克刀.png" alt="马克刀"></a></li>
+                            <li><a href=""><img src="IMG/2000/松永真扎古.png" alt="扎古2（松永真专用机）"></a></li>
+
+                            <li><a href=""><img src="IMG/2000/卡碧尼黑.png" alt="卡碧尼Mk-II (普露兹)"></a></li>
+                            <li><a href=""><img src="IMG/2000/2000脉冲.png" alt="脉冲高达（露娜机）"></a></li>
+                            <li><a href=""><img src="IMG/2000/双色球.png" alt="卡普鲁&柯林卡普鲁"></a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="contentBand">
+                        <nav id="ssNavi">
+                          <ul>
+                            <li class="btn">
+                              <a href="#">
+                                COST 2500
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+
+                      <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>7分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2500/黑狗.png" alt="高达AGE-2黑猎犬"></a></li>
+                            <li><a href=""><img src="IMG/2500/GP03.png" alt="高达试做三号机（雄蕊）"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>6分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2500/漆黑强袭.png" alt="漆黑强袭高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/古辛.png" alt="高达·古辛深度重锻型"></a></li>
+                            <li><a href=""><img src="IMG/2500/卡碧尼白.png" alt="卡碧尼"></a></li>
+                            <li><a href=""><img src="IMG/2500/X1.png" alt="海盗高达X1"></a></li>
+                            <li><a href=""><img src="IMG/2500/疗天使.png" alt="疗天使"></a></li>
+                            <li><a href=""><img src="IMG/2500/堕天使.png" alt="堕天使高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/肛自己.png" alt="G-自我"></a></li>
+                            <li><a href=""><img src="IMG/2500//报丧女妖.png" alt="报丧女妖"></a></li>
+                            <li><a href=""><img src="IMG/2500/智天使高达.png" alt="智天使高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/权天使高达.png" alt="权天使高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/雪崩能天使.png" alt="能天使高达雪崩型"></a></li>
+                            <li><a href=""><img src="IMG/2500/天狼.png" alt="高达·巴巴托斯天狼座"></a></li>
+                            <li><a href=""><img src="IMG/2500/百式.png" alt="百式"></a></li>
+                            <li><a href=""><img src="IMG/2500/高特拉坦.png" alt="高特拉坦"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>5分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2500/脉冲.png" alt="脉冲高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/极限炮.png" alt="极限高达 type-雷奥斯 日蚀面"></a></li>
+                            <li><a href=""><img src="IMG/2500/骑士踢.png" alt="杰特拉"></a></li>
+                            <li><a href=""><img src="IMG/2500/铁奥.png" alt="铁奥"></a></li>
+                            <li><a href=""><img src="IMG/2500/哈姆太郎.png" alt="勇气式指挥官用试验机"></a></li>
+                            <li><a href=""><img src="IMG/2500/精神力扎古.png" alt="精神力扎古"></a></li>
+                            <li><a href=""><img src="IMG/2500/魔法少女.png" alt="极限高达TYPE-塞西娅 EXCELLIA"></a></li>
+                            <li><a href=""><img src="IMG/2500/托鲁基斯2.png" alt="托鲁基斯2"></a></li>
+                            <li><a href=""><img src="IMG/2500/z高达.png" alt="Z高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/阿特拉斯高达.png" alt="阿特拉斯高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/吉翁号.png" alt="吉翁号"></a></li>
+                            <li><a href=""><img src="IMG/2500/武士道.png" alt="须佐之男"></a></li>
+                            <li><a href=""><img src="IMG/2500/双头龙高达.png" alt="双头龙高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/X主角机.png" alt="高达X分裂者"></a></li>
+                       
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>4分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2500/极限浮游.png" alt="极限高达 type-雷奥斯 神圣面"></a></li>
+                            <li><a href=""><img src="IMG/2500/极限格.png" alt="极限高达 type-雷奥斯 异化面"></a></li>
+                            <li><a href=""><img src="IMG/2500/花洒哥.png" alt="高达维萨戈·破坏者"></a></li>
+                            <li><a href=""><img src="IMG/2500/ZZ高达.png" alt="ZZ高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/AGE2.png" alt="高达AGE-2"></a></li>
+                            <li><a href=""><img src="IMG/2500/猎犬.png" alt="猎犬"></a></li>
+                
+                            <li><a href=""><img src="IMG/2500/神意高达.png" alt="神意高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/红龙.png" alt="异端高达红色机红龙型"></a></li>
+                            <li><a href=""><img src="IMG/2500/重武装高达改EW.png" alt="重武装高达改EW"></a></li>
+                            <li><a href=""><img src="IMG/2500/全装甲高达.png" alt="全装甲高达（TB）"></a></li>
+                            <li><a href=""><img src="IMG/2500/金斯莫.png" alt="金斯莫"></a></li>
+                            <li><a href=""><img src="IMG/2500/X3.png" alt="海盗高达X3"></a></li>
+                            <li><a href=""><img src="IMG/2500/自由高达.png" alt="自由高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/镜高达.png" alt="镜高达"></a></li>
+              
+                            <li><a href=""><img src="IMG/2500/金异端天米娜.png" alt="异端高达金色机天蜜娜"></a></li>
+                            <li><a href=""><img src="IMG/2500/红改.png" alt="异端高达红色机改"></a></li>
+                            <li><a href=""><img src="IMG/2500/哈姆太郎.png" alt="勇气式指挥官用试验机"></a></li>
+                         
+                            <li><a href=""><img src="IMG/2500/无限正义.png" alt="无限正义高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/地狱死神EW.png" alt="地狱死神高达EW"></a></li>
+                            <li><a href=""><img src="IMG/2500/AGE3.png" alt="高达AGE-3"></a></li>
+                            <li><a href=""><img src="IMG/2500/传说.png" alt="传说高达"></a></li>
+                      
+                            <li><a href=""><img src="IMG/2500/X高达.png" alt="高达X分裂者"></a></li>
+                            <li><a href=""><img src="IMG/2500/T3.png" alt="托鲁基斯3"></a></li>
+                            <li><a href=""><img src="IMG/2500/幻影高达.png" alt="幻影高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/亥脖龙.png" alt="亥伯龙高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/完美强袭.png" alt="完美强袭高达"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>3分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2000/迅雷高达.png" alt="迅雷高达"></a></li>
+                            <li><a href=""><img src="IMG/2000/沙漠高达改.png" alt="沙漠高达改"></a></li>
+                            <li><a href=""><img src="IMG/2000/胶扎.png" alt="惊异扎古"></a></li>
+                            <li><a href=""><img src="IMG/2000/强尼扎古.png" alt="扎古2（强尼莱丁专用机）"></a></li>
+                            <li><a href=""><img src="IMG/2000/汉穆拉比.png" alt="汉穆拉比"></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>2分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/2500/拂晓.png" alt="拂晓"></a></li>
+                            <li><a href=""><img src="IMG/2500/闪光高达.png" alt="闪光高达"></a></li>
+                            <li><a href=""><img src="IMG/2500/GP02.png" alt="高达试做二号机"></a></li>
+
+                            <li><a href=""><img src="IMG/2500/教主命运.png" alt="命运高达（海涅机）"></a></li>
+                            <li><a href=""><img src="IMG/2500/2500W.png" alt="飞翼高达零式（卡托鲁搭）"></a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="contentBand">
+                        <nav id="ssNavi">
+                          <ul>
+                            <li class="btn">
+                              <a href="#">
+                                COST 3000
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+
+
+
+                      <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>8分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/3000/再生高达.png" alt="再生高达"></a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>7分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/3000/炙热争夺.png" alt="炽热争夺高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/妖天使.png" alt="妖天使高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/DX.png" alt="高达DX"></a></li>
+                            <li><a href=""><img src="IMG/3000/FX.png" alt="高达AGE-FX"></a></li>
+                            <li><a href=""><img src="IMG/3000/全刃.png" alt="00高达量子全刃型"></a></li>
+                            <li><a href=""><img src="IMG/3000/狼王.png" alt="高达·巴巴托斯狼王"></a></li>
+                            <li><a href=""><img src="IMG/3000/不可为空.png" alt="高达巴耶力"></a></li>
+                            <li><a href=""><img src="IMG/3000/癌变.png" alt="次代高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/V2.png" alt="胜利高达2"></a></li>
+                            <li><a href=""><img src="IMG/3000/命运.png" alt="命运高达"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>6分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/3000/全装甲X1.png" alt="海盗高达X1全覆式披风"></a></li>
+                            <li><a href=""><img src="IMG/3000/七剑.png" alt="00高达七剑G"></a></li>
+                            <li><a href=""><img src="IMG/3000/撒咋比.png" alt="沙扎比"></a></li>
+                            <li><a href=""><img src="IMG/3000/掉毛.png" alt="飞翼高达零式EW"></a></li>
+                            <li><a href=""><img src="IMG/3000/无毛.png" alt="飞翼高达零式"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>5分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/3000/狱天使.png" alt="狱天使高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/佩涅罗佩.png" alt="佩涅罗佩"></a></li>
+                            <li><a href=""><img src="IMG/3000/强袭自由.png" alt="强袭自由高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/完美肛自己.png" alt="完美G-自我"></a></li>
+                            <li><a href=""><img src="IMG/3000/极限2.png" alt="极限高达 type-雷奥斯II Vs."></a></li>
+                            <li><a href=""><img src="IMG/3000/FAUC.png" alt="全装甲独角兽"></a></li>
+                            <li><a href=""><img src="IMG/3000/薯条.png" alt="报丧女妖·命运女神"></a></li>
+                            <li><a href=""><img src="IMG/3000/尊者高达.png" alt="尊者高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/量子.png" alt="00高达量子型"></a></li>
+                            <li><a href=""><img src="IMG/3000/倒A.png" alt="倒A高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/柯西.png" alt="柯西高达"></a></li>
+                        </ul>
+                    </div>
+                    <div class="pic_list_con">
+                       
+                        <h3 style="font-size: 18px; color: red;" ><span>4分</span></h3>
+                        
+                        <ul class="clearfix">
+                            <li><a href=""><img src="IMG/3000/海牛.png" alt="Hi-ν高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/牛高达.png" alt="ν高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/EX-S.png" alt="高达EX-S"></a></li>
+                            <li><a href=""><img src="IMG/3000/新安洲.png" alt="新安洲"></a></li>
+                            <li><a href=""><img src="IMG/3000/神高达.png" alt="神高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/火星.png" alt="高达雷基鲁斯"></a></li>
+                            <li><a href=""><img src="IMG/3000/夜莺.png" alt="夜莺"></a></li>
+                            <li><a href=""><img src="IMG/3000/UC.png" alt="独角兽高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/倒X.png" alt="倒X"></a></li>
+                            <li><a href=""><img src="IMG/3000/00R.png" alt="00高达"></a></li>
+                            <li><a href=""><img src="IMG/3000/ZZFA.png" alt="全装备ZZ高达"></a></li>
+                        </ul>
+                    </div>
+             
+
+
+                </div>
+              </div>
+
+
+
+              <div class="layui-card" style="opacity: 0.8;">
+                <div class="layui-card-header"><h1 style="font-size: 24px;"><b>奖品一览</b></h1></div>
+                <div class="layui-card-body">
+                  <img  Style="display: inline-block;width: 100%; max-width: 1110px;"  src="IMG/J1.jpg">
+                </div>
+              </div>
+          </div>
+         
+        </div>
+         
+        <!--
+        移动设备、平板、桌面端的不同表现：
+        <div class="layui-row">
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            移动：6/12 | 平板：6/12 | 桌面：4/12
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            移动：6/12 | 平板：6/12 | 桌面：4/12
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+            移动：4/12 | 平板：12/12 | 桌面：4/12
+          </div>
+          <div class="layui-col-xs4 layui-col-sm7 layui-col-md8">
+            移动：4/12 | 平板：7/12 | 桌面：8/12
+          </div>
+          <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
+            移动：4/12 | 平板：5/12 | 桌面：4/12
+          </div>
+        </div>
+        -->
+      </div>
+
+    
+</body>
+</html>
